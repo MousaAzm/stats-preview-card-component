@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+$color-very-dark-blue-main-bg: hsl(233, 47%, 7%);
+$color-dark-desaturated-blue-card-bg: hsl(244, 38%, 16%);
+$color-soft-violet-accent: hsl(277, 64%, 61%);
+$color-white-main-heading-stats: hsl(0, 0%, 100%);
+$color-slightly-transparent-white-main-paragraph: hsla(0, 0%, 100%, 0.75);
+$color-slightly-transparent-white-stats-headings: hsla(0, 0%, 100%, 0.6);
+$font-inter: "Inter", sans-serif;
+$font-lexend-deca: "Lexend Deca", sans-serif;
+$font-size-15: 15px;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: $font-size-15;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-very-dark-blue-main-bg;
+    padding: 15px;
+    .card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1160px;
+        background-color: $color-dark-desaturated-blue-card-bg;
+        border-radius: 10px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            margin: auto;
+        }
+    }
+}
+
+.card-text {
+    padding: 70px 80px 60px 70px;
+    h1 {
+        font-size: 38px;
+        font-family: $font-lexend-deca;
+        font-weight: 700;
+        color: $color-white-main-heading-stats;
+
+        span {
+            color: $color-soft-violet-accent;
+        }
+    }
+
+    .card-text-p {
+        padding-top: 30px;
+        padding-bottom: 60px;
+        padding-right: 60px;
+        line-height: 27px;
+        font-weight: 400;
+        font-family: $font-inter;
+        font-size: $font-size-15;
+        color: $color-slightly-transparent-white-main-paragraph;
+    }
+}
+
+.footer-row {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 75px;
+    h2 {
+        color: $color-white-main-heading-stats;
+        font-family: $font-inter;
+        font-weight: 700;
+        font-size: 24px;
+    }
+    p {
+        padding: 10px 0;
+        color: $color-slightly-transparent-white-stats-headings;
+        text-transform: uppercase;
+        font-family: $font-lexend-deca;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+}
+
+.card-img {
+    position: relative;
+    background: url(../images/image-header-desktop.jpg) no-repeat center;
+    background-size: cover;
+    object-fit: none;
+    .layer {
+        background-color: rgba(175, 51, 251, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        height: 100% !important;
+        padding: 60px 20px !important;
+        .card {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: repeat(2, 1fr);
+            max-width: 600px !important;
+            text-align: center;
+            .card-text {
+                padding: 70px !important;
+                order: 1;
+                
+            }
+        }
+    }
+
+    .card-text p, .footer-row {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        height: 100% !important;
+        padding: 60px 20px !important;
+        .card {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: repeat(2, 1fr) !important;
+            max-width: 600px !important;
+            text-align: center;
+            .card-text {
+                padding: 55px 30px 25px 30px !important;
+                order: 1;
+                h1 {
+                    font-size: 30px !important;
+                }
+                .card-text-p {
+                    padding: 30px 15px 20px !important;
+                }
+            }
+        }
+    }
+
+     .footer-row {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+
+   
+}
+
+@media (max-width: 390px) {
+    .card {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .card-img {
+        width: 100%;
+        height: 255px !important;
+        background: url(../images/image-header-mobile.jpg) no-repeat center !important;
+        background-size: 350px !important;
+    }
+}
+
+
+
